@@ -19,6 +19,7 @@ public class list {
             }
             System.out.println(list.get(i));
         }
+
         Iterator<String> iterator =list.iterator();
         while (iterator.hasNext()){
             if (iterator.next().equals("3k")){
