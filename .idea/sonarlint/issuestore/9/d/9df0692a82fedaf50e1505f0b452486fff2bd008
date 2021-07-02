@@ -1,0 +1,12 @@
+
+Œ
+java:S1130#"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(º™Ú7
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ƒÂ‘­øÿÿÿÿ
+Y
+java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(­²ÙÍ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(öƒ”æ
+V
+java:S2134"@Don't extend "Thread", since the "run" method is not overridden.(Ú°Ä¡
+N	java:S106"9Replace this use of System.out or System.err by a logger.(öÛ÷Ú
+\
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€

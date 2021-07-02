@@ -1,0 +1,11 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æ—®Í
+h
+java:S1128"FRemove this unused import 'java.util.concurrent.atomic.AtomicInteger'.(¿êäœøÿÿÿÿ8’Šå˜ˆ/
+a
+java:S1128"?Remove this unused import 'java.util.concurrent.ThreadFactory'.(ã’Ÿºúÿÿÿÿ8ˆä˜ˆ/
+J
+java:S1172"(Remove this unused method parameter "e".(ÂýèÊýÿÿÿÿ8Ÿ€æ˜ˆ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ƒðÈ8Ÿ€æ˜ˆ/
+`
+java:S1128	">Remove this unused import 'org.jetbrains.annotations.NotNull'.(éš®ïøÿÿÿÿ8’Šå˜ˆ/
