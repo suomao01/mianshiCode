@@ -11,15 +11,16 @@ package 锁;
 public class SynchRonizedUtil {
 
     static int count =0;
-    public static void doSomeThing(int i){
-        int counted = count++;
-        System.out.println(counted);
+    public static void doSomeThing(){
+        for (int i = 0; i < 20; i++) {
+           count = count+1;
+        }
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < 100; i++) {
-           doSomeThing(1);
-        }
+        Thread thread = new Thread(SynchRonizedUtil::doSomeThing, Thread.currentThread().getName());
+        thread.start();
+        thread.start();
     }
 
 }

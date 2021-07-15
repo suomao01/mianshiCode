@@ -19,15 +19,13 @@ public class PrintParityAlternately {
         new Thread(() -> {
             synchronized (o) {
                 //奇数
-                while (count < 10) {
+                while (count%2==0 && count<10) {
                     int a = ++count;
                     System.out.println(Thread.currentThread().getName() + "******" + list.get(a));
                     System.out.println(Thread.currentThread().getState()+"第一个");
                     try {
+                        o.wait();
                         o.notify();
-                        if(count==9){
-                            o.wait();
-                        }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -38,15 +36,13 @@ public class PrintParityAlternately {
         new Thread(() -> {
             synchronized (o) {
                 //偶数
-                while (count < 10) {
+                while (count%2!=0 && count<10) {
                     int a = ++count;
                     System.out.println(Thread.currentThread().getName() + "******" + list.get(a));
                     System.out.println(Thread.currentThread().getState()+"第二个");
                     try {
                         o.notify();
-                        if(count==9){
-                            o.wait();
-                        }
+                        o.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -54,24 +50,6 @@ public class PrintParityAlternately {
             }
         }).start();
 
-        new Thread(() -> {
-            synchronized (o) {
-                //偶数
-                while (count < 10) {
-                    int a = ++count;
-                    System.out.println(Thread.currentThread().getName() + "******" + list.get(a));
-                    System.out.println(Thread.currentThread().getState()+"第三个");
-                    try {
-                        o.notify();
-                        if(count==9){
-                            o.wait();
-                        }
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }).start();
 
 
     }
