@@ -15,8 +15,10 @@ public class ThreadTask implements Callable {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Future future = executorService.submit(new ThreadTask());
-        Object o = future.get();
+        FutureTask<Integer> futureTask = new FutureTask<>(new ThreadTask());
+        executorService.submit(futureTask);
+//        Future future = executorService.submit(new ThreadTask());
+        Object o = futureTask.get();
         System.out.println(o.toString());
         executorService.shutdown();
     }
